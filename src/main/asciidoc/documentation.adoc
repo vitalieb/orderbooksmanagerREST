@@ -1,0 +1,240 @@
+= API Reference
+:toc: left
+
+== Order books endpoints
+=== Create order books
+
+Perform a POST against */orderbook/_instrumentId_* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}create-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}create-order-book\http-response.adoc[]
+
+=== Open order book
+
+Perform a PUT against */orderbook/_instrumentId_/open* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}open-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}open-order-book\http-response.adoc[]
+
+=== Close order book
+
+Perform a PUT against */orderbook/_instrumentId_/close* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}close-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}close-order-book\http-response.adoc[]
+
+=== Amount of orders in order book
+
+Perform a GET against */orderbook/_instrumentId_/orders-number* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}amount-of-orders-in-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}amount-of-orders-in-order-book\http-response.adoc[]
+
+=== Demand per order book
+
+Perform a GET against */orderbook/_instrumentId_/demand* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}demand-per-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}demand-per-order-book\http-response.adoc[]
+
+=== Limit breakdown per order book
+
+Perform a GET against */orderbook/_instrumentId_/limit-break-down* - _instrumentId_ is the instrument id for this orderbook.
+Response contains a map where keys are limit prices and values are aggregated quantities per specific price.
+
+_Sample request:_
+include::{snippets}limit-break-down-for-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}limit-break-down-for-order-book\http-response.adoc[]
+
+=== Amount of valid orders from order book
+
+Perform a GET against */orderbook/_instrumentId_/valid-orders* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}amount-of-valid-orders-from-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}amount-of-valid-orders-from-order-book\http-response.adoc[]
+
+=== Amount of invalid orders from order book
+
+Perform a GET against */orderbook/_instrumentId_/invalid-orders* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}amount-of-invalid-orders-from-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}amount-of-invalid-orders-from-order-book\http-response.adoc[]
+
+=== Valid demand per order book
+
+Perform a GET against */orderbook/_instrumentId_/valid-demand* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}valid-demand-per-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}valid-demand-per-order-book\http-response.adoc[]
+
+=== Invalid demand per order book
+
+Perform a GET against */orderbook/_instrumentId_/invalid-demand* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}invalid-demand-per-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}invalid-demand-per-order-book\http-response.adoc[]
+
+=== Accumulated execution quantity per order book
+
+Perform a GET against */orderbook/_instrumentId_/execution-quantity* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}accumulated-execution-quantity-per-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}accumulated-execution-quantity-per-order-book\http-response.adoc[]
+
+=== Execution price per order book
+
+Perform a GET against */orderbook/_instrumentId_/execution-price* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}execution-price-per-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}execution-price-per-order-book\http-response.adoc[]
+
+=== Order with biggest demand per order book
+
+Perform a GET against */orderbook/_instrumentId_/biggest-order* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}order-with-biggest-demand-from-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}order-with-biggest-demand-from-order-book\http-response.adoc[]
+
+=== Order with smallest demand per order book
+
+Perform a GET against */orderbook/_instrumentId_/smallest-order* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}order-with-smallest-demand-from-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}order-with-smallest-demand-from-order-book\http-response.adoc[]
+
+
+=== Earliest order from order book
+
+Perform a GET against */orderbook/_instrumentId_/earliest-order* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}earliest-order-from-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}earliest-order-from-order-book\http-response.adoc[]
+
+
+=== Latest order from order book
+
+Perform a GET against */orderbook/_instrumentId_/latest-order* - _instrumentId_ is the instrument id for this orderbook.
+
+_Sample request:_
+include::{snippets}latest-order-from-order-book\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}latest-order-from-order-book\http-response.adoc[]
+
+== Orders endpoints
+:toc: left
+
+=== Create order
+
+Perform a POST against */order* - below are the required fields. Content type should be _application/json_
+
+_Request fields:_
+include::{snippets}create-and-save-order\request-fields.adoc[]
+
+_Sample request:_
+include::{snippets}create-and-save-order\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}create-and-save-order\http-response.adoc[]
+
+=== Is order valid check
+
+Perform a GET against */order/_orderId_/valid* - orderId is the UUID generated at order creation
+
+_Sample request:_
+include::{snippets}is-order-valid\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}is-order-valid\http-response.adoc[]
+
+=== Execution quantity per order
+
+Perform a GET against */order/_orderId_/execution-quantity* - orderId is the UUID generated at order creation
+
+_Sample request:_
+include::{snippets}execution-quantity-per-order\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}execution-quantity-per-order\http-response.adoc[]
+
+=== Execution price per order
+
+Perform a GET against */order/_orderId_/execution-price* - orderId is the UUID generated at order creation
+
+_Sample request:_
+include::{snippets}get-execution-price\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}get-execution-price\http-response.adoc[]
+
+=== Price per order
+
+Perform a GET against */order/_orderId_/price* - orderId is the UUID generated at order creation
+
+_Sample request:_
+include::{snippets}get-order-price\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}get-order-price\http-response.adoc[]
+
+== Executions endpoints
+:toc: left
+
+=== Add execution
+
+Perform a POST against */execution* - below are the required fields. Content type should be _application/json_
+
+_Request fields:_
+include::{snippets}create-and-add-execution\request-fields.adoc[]
+
+_Sample request:_
+include::{snippets}create-and-add-execution\http-request.adoc[]
+
+_Sample response:_
+include::{snippets}create-and-add-execution\http-response.adoc[]
+
+
